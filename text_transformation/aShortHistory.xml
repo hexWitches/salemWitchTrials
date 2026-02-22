@@ -18,7 +18,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>salem-witCHes edition</edition>
+                <edition>HexWitches edition</edition>
                 <respStmt>
                     <resp>Annotations by</resp>
                     <name>Sara Roggiani</name>
@@ -26,8 +26,8 @@
             </editionStmt>
             <publicationStmt>
                 <publisher>
-                    <name>salem-witCHes</name>
-                    <idno>https://github.com/salem-witCHes</idno>
+                    <name>HexWitches</name>
+                    <idno>https://github.com/hexWitches</idno>
                 </publisher>
                 <pubPlace>Bologna</pubPlace>
                 <date when="2025"/>
@@ -181,7 +181,7 @@
                     </titlePart>
                 </docTitle>
                 <figure>
-                    <graphic url="https://github.com/salem-witCHes/salemWitchTrials/blob/main/book%20images/image002%20-%20Modificata.png?raw=true"/>
+                    <graphic url="https://github.com/hexWitches/salemWitchTrials/blob/main/book%20images/image002%20-%20Modificata.png?raw=true"/>
                 </figure>
                 <epigraph>
                     <cit>
