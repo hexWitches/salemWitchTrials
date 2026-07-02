@@ -7,7 +7,7 @@
 
 <item/A_Short_History_of_the_Salem_Witchcraft_Trials> fabio:hasPageCount "76" ;
     fabio:hasPlaceOfPublication <place/salem> ;
-    crm:P102_has_title "A Short History of the Salem Village Witchcraft Trials: : illustrated by a verbatim report of the trial of Mrs. Elizabeth Howe, a memorial of her" ;
+    crm:P102_has_title "A Short History of the Salem Village Witchcraft Trials. Illustrated by a verbatim report of the trial of Mrs. Elizabeth Howe, a memorial of her" ;
     crm:P2_has_type wd:Q571 ;
     crm:P50_has_current_keeper wd:Q7603401 ;
     crm:P72_has_language wd:Q1860 ;

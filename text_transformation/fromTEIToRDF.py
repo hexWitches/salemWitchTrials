@@ -7,18 +7,18 @@ from rdflib import URIRef, Literal, Namespace, Graph
 TEI = Namespace("http://www.tei-c.org/ns/1.0")
 ns = {"tei": TEI}
 schema = Namespace("https://schema.org/")
-my_ns = Namespace("https://w3id.org/salemWitchTrials/")
+swt = Namespace("https://w3id.org/salemWitchTrials/")
 lode = Namespace("http://linkedevents.org/ontology/")
 
 # parsing the XML file
-tree = ET.parse("aShortHistory.xml")
+tree = ET.parse("text_transformation/aShortHistory.xml")
 root = tree.getroot()
 my_graph = Graph()
 
 # bind() = a method on the graph that associates a short prefix name with a full namespace URI
 my_graph.bind("tei", TEI)
 my_graph.bind("schema", schema)
-my_graph.bind("my_ns", my_ns)
+my_graph.bind("swt", swt)
 my_graph.bind("lode", lode)
 
 # teiHeader -> bibliographic information
@@ -44,9 +44,9 @@ full_comment = "".join(book_comment.itertext())
 trials_comment = text.find("tei:div[@type='page'][@n='2']/tei:p[@n='3']", ns).text
 
 # creating the uri of the metadata
-doc_uri = my_ns.A_Short_History
-author_uri = my_ns.Author
-publisher_uri = my_ns.Publisher
+doc_uri = swt.A_Short_History
+author_uri = swt.Author
+publisher_uri = swt.Publisher
 
 # adding metadata to the graph
 my_graph.add((doc_uri, RDF.type, schema.CreativeWork))
@@ -72,7 +72,7 @@ places = root.findall(".//tei:listPlace/tei:place", ns)
 # adding places + persons to the graph
 for person in persons:
     person_id = person.attrib.get("{http://www.w3.org/XML/1998/namespace}id")
-    person_uri = my_ns[f"person/{person_id}"]
+    person_uri = swt[f"person/{person_id}"]
     name = person.find("tei:persName", ns).text
     same_as = person.attrib.get("sameAs", None)
 
@@ -96,7 +96,7 @@ for person in persons:
         if birth_place is not None:
             birth_place_ref = birth_place.attrib.get("ref", "").lstrip("#")
             if birth_place_ref:
-                my_graph.add((person_uri, schema.birthPlace, my_ns[f"place/{birth_place_ref}"]))
+                my_graph.add((person_uri, schema.birthPlace, swt[f"place/{birth_place_ref}"]))
         
     # death info
     death = person.find("tei:death", ns)
@@ -108,7 +108,7 @@ for person in persons:
             my_graph.add((person_uri, schema.deathDate, Literal(when, datatype=XSD.date)))
         if death_place is not None:
             death_place_ref = death_place.attrib.get("ref", "").lstrip("#")
-            my_graph.add((person_uri, schema.deathPlace, my_ns[f"place/{death_place_ref}"]))
+            my_graph.add((person_uri, schema.deathPlace, swt[f"place/{death_place_ref}"]))
 
     note = person.find("tei:note/tei:quote", ns)
     if note is not None:
@@ -122,7 +122,7 @@ for person in persons:
 
 for place in places:
     place_id = place.attrib.get("{http://www.w3.org/XML/1998/namespace}id")
-    place_uri = my_ns[f"place/{place_id}"]
+    place_uri = swt[f"place/{place_id}"]
     place_name = place.find("tei:placeName", ns).text
     same_as = place.attrib.get("sameAs", None)
 
@@ -135,7 +135,7 @@ for place in places:
 main_event = root.find(".//tei:profileDesc/tei:listEvent/tei:event[@type='main']", ns)
 
 if main_event is not None:
-    trials_uri = my_ns["event/salem_witch_trials"]
+    trials_uri = swt["event/salem_witch_trials"]
     my_graph.add((trials_uri, RDF.type, lode.Event))
 
     name = main_event.find("tei:eventName", ns)
@@ -153,7 +153,7 @@ if main_event is not None:
 
     sub_event = root.find(".//tei:profileDesc/tei:listEvent/tei:event[@type='sub']", ns)
     if sub_event is not None:
-        trial_eh = my_ns["event/trial_of_EH"]
+        trial_eh = swt["event/trial_of_EH"]
         my_graph.add((trial_eh, RDF.type, lode.Event))
         my_graph.add((trials_uri, schema.subEvent, trial_eh))
 
@@ -165,4 +165,4 @@ if main_event is not None:
         my_graph.add((trial_eh, schema.name, Literal(sub_name.text.strip())))
         my_graph.add((trial_eh, lode.atTime, Literal(sub_time)))
 
-my_graph.serialize(destination="salem_witch_trials.ttl", format="turtle")
+my_graph.serialize(destination="text_transformation/short_history.ttl", format="turtle")

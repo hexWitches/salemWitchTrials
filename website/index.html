@@ -348,7 +348,7 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Items description</h2>
         <p>The following tables are generated from manually created CSV files, using natural language. Each table corresponds to a specific item and each row represents a subject-predicate-object triple, describing semantic properties such as title, creator, material, date, and relationships between items.</p>
-        <p>CSV files of the following tables can be downloaded <a href="csv_zip.zip" download><strong>here</strong></a>.</p>
+        <p>CSV files of the following tables can be downloaded <a href="assets/zip_files/csv_zip.zip" download><strong>here</strong></a>.</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -701,7 +701,7 @@
               </a>
               <p>The RDF dataset was created using Python, specifically through the use of RDFLib, which enables the manipulation of RDF data, and the lxml.etree library, which provides enhanced flexibility for handling XML documents. This transformation facilitates data exchange and promotes semantic interoperability.</p>
               <p>Initially, the relevant sections of the XML/TEI document required for the transformation were identified and extracted. The process subsequently involved data normalization and data type mapping to ensure consistency and alignment with semantic web standards. This methodology not only supports data exchange but also enable the availability of both data and metadata regarding relationships between entities on the web. Furthermore, it allows for the description of the semantics associated with the data through a formalism that is machine-readable.</p>
-              <p>In particular, entities such as people, places and events encoded in the XML/TEI document were transformed into RDF data. Additionally, persistent and unique URIs were defined for each entity to ensure stable identification across datasets.</p>
+              <p>In particular, entities such as people, places and events encoded in the XML/TEI document were transformed into <a href="text_transformation/short_history.ttl" target="_blank">RDF data</a>. Additionally, persistent and unique URIs were defined for each entity to ensure stable identification across datasets.</p>
               <p>Established ontologies were employed to semantically enrich data. For example, the FOAF ontology was used to describe people. This approach enhances the interoperability and reusability of the dataset within the broader Linked Open Data ecosystem.</p>
             </div>
           </div><!-- End Service Item -->
@@ -726,8 +726,8 @@
           <div class="Know-repr container rdf section-title">
             <h2>RDF dataset</h2>
             <p>Using Python, the team produced an RDF dataset that semantically connects all the CSV files representing the ten selected cultural items. This process involved structuring the data to establish meaningful relationships between entities, aligning them with Linked Open Data principles to enhance interoperability and contextual understanding.</p>
-            <p>The following ontology was generated from the transformation of CSV files into Turtle format. It represents the relationships between the selected items and the key concepts of our project.</p>
-            <p>Turtle files can be downloaded <a href="rdf_zip.zip" download><strong>here</strong></a>.</p>
+            <p>The following knowledge graph was generated from the transformation of CSV files into Turtle format. It represents the relationships between the selected items and the key concepts of our project.</p>
+            <p>Turtle files can be downloaded <a href="assets/zip_files/rdf_zip.zip" download><strong>here</strong></a>.</p>
             <pre id="ttl-display">
             </pre>
           </div>
@@ -735,7 +735,7 @@
       </div>
 
       <script>
-        fetch("https://gist.githubusercontent.com/sararoggi/a82ae59aec4b108c27394611fd34121f/raw/8389220f7819ea25f2891cbc128ee147edf0bf16/gistfile1.txt")
+        fetch("rdf_dataset/swt_graph.ttl")
           .then(response => {
             if (!response.ok) {
               throw new Error("Network response was not ok");
@@ -805,7 +805,7 @@
 
             <div class="col-lg-4">
               <div class="info-item d-flex align-items-center">
-                <img src="team/sara.png" alt="Sara">
+                <a href="https://github.com/sararoggi" target="_blank"><img src="assets/img/team/sara.png" alt="Sara"></a>
                 <div>
                   <h3>Sara Roggiani</h3>
                   <p>sara.roggiani2@studio.unibo.it</p>
@@ -815,7 +815,7 @@
 
             <div class="col-lg-4">
               <div class="info-item d-flex align-items-center">
-                <img src="team/maryam.png" alt="Maryam">
+                <a href="https://github.com/Maryamdadras" target="_blank"><img src="assets/img/team/maryam.png" alt="Maryam"></a>
                 <div>
                   <h3>Maryam Dadras</h3>
                   <p>maryam.dadrasrazi@studio.unibo.it</p>
@@ -825,7 +825,7 @@
 
             <div class="col-lg-4">
               <div class="info-item d-flex align-items-center">
-                <img src="team/miri 2.png" alt="Maryam">
+                <a href="https://github.com/mir-pin" target="_blank"><img src="assets/img/team/miri.png" alt="Maryam"></a>
                 <div>
                   <h3>Miriana Pinto</h3>
                   <p>miriana.pinto@studio.unibo.it</p>

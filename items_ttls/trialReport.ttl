@@ -9,7 +9,7 @@
     crm:P2_has_type wd:Q2334719 ;
     crm:P43_has_dimension "21.1 x 34.6 cm" ;
     crm:P50_has_current_keeper wd:Q2002625 ;
-    crm:P62i_is_depicted_by <item/Execution_of_Bridget_Bishop> ;
+    crm:P62i_is_depicted_by "Execution of Bridget Bishop" ;
     crm:P72_has_language wd:Q1860 ;
     schema:about <concept/witchcraft>,
         <event/execution_of_bridget>,

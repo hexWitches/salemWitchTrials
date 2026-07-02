@@ -1,20 +1,20 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix lode: <http://linkedevents.org/ontology/> .
-@prefix my_ns: <https://w3id.org/salemWitchTrials/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix swt: <https://w3id.org/salemWitchTrials/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-my_ns:A_Short_History a schema:CreativeWork ;
+swt:A_Short_History a schema:CreativeWork ;
     schema:archivedAt <https://archive.org/details/shorthistoryofsa00perl/mode/1up> ;
-    schema:author my_ns:Author ;
+    schema:author swt:Author ;
     schema:datePublished "1911"^^xsd:gYear ;
     schema:description """
                     This short history meets that earnest desire; it gives the origin, growth, and death of the hideous monster; it gives dates, courts, and names of places, jurors, witnesses, and those hanged; it names and explains certain "men and things" that are concomitant to the trials, with which the reader may not be conversant and which are necessary to the proper setting of the trials in one's mind; it compasses the salient features of witchcraft history, so that the story of the 1692 "delusion" may be garnered and entertainingly rehearsed.
                 """ ;
     schema:name "A short history of the Salem village witchcraft trialsIllustrated by a Verbatim Report of the Trial of Mrs. Elizabeth Howe" ;
-    schema:publisher my_ns:Publisher .
+    schema:publisher swt:Publisher .
 
 <https://w3id.org/salemWitchTrials/event/salem_witch_trials> a lode:Event ;
     lode:atPlace "Salem" ;
@@ -67,10 +67,10 @@ my_ns:A_Short_History a schema:CreativeWork ;
     schema:deathDate "1720-02-27"^^xsd:date ;
     schema:deathPlace <https://w3id.org/salemWitchTrials/place/sudbury-massachusetts> .
 
-my_ns:Author a foaf:Person ;
+swt:Author a foaf:Person ;
     foaf:name "Martin Van Burne Perley" .
 
-my_ns:Publisher a foaf:Agent ;
+swt:Publisher a foaf:Agent ;
     foaf:name "M. V. B. Perley, Publisher" .
 
 <https://w3id.org/salemWitchTrials/event/trial_of_EH> a lode:Event ;

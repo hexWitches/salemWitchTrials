@@ -5,8 +5,7 @@
 
 <item/Playbill:_The_Crucible> crm:P102_has_title "The Crucible" ;
     crm:P2_has_type wd:Q429785 ;
-    crm:P45_consists_of wd:Q11472,
-        wd:Q127418 ;
+    crm:P45_consists_of "paper and ink" ;
     crm:P50_has_current_keeper wd:Q110453413 ;
     schema:about <event/salem_witch_trials>,
         wd:Q17172848 ;

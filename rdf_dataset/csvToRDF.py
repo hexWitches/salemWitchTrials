@@ -23,7 +23,7 @@ namespaces = {
 
 # Predicate mapping
 predicate_map = {} # dictionary for storing RDF URI
-with open("RDF dataset/mapping.csv", encoding="utf-8") as f:
+with open("rdf_dataset/mapping.csv", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
         nl_predicate = row["predicate"]
@@ -34,7 +34,7 @@ with open("RDF dataset/mapping.csv", encoding="utf-8") as f:
 
 # Entities mapping 
 mapping_entities = {}
-with open("RDF dataset/mapping_entities.csv", encoding="utf-8") as f:
+with open("rdf_dataset/mapping_entities.csv", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
         mapping_entities[row["object"]] = row["entity"]
