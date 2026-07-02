@@ -7,7 +7,7 @@ from rdflib import URIRef, Literal, Namespace, Graph
 TEI = Namespace("http://www.tei-c.org/ns/1.0")
 ns = {"tei": TEI}
 schema = Namespace("https://schema.org/")
-swt = Namespace("https://w3id.org/salemWitchTrials/")
+swt = Namespace("https://w3id.org/salemWitchTrials/graph")
 lode = Namespace("http://linkedevents.org/ontology/")
 
 # parsing the XML file

@@ -1,4 +1,4 @@
-@base <https://w3id.org/salemWitchTrials/> .
+@base <https://w3id.org/salemWitchTrials/graph> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix schema: <https://schema.org/> .
 @prefix viaf: <http://viaf.org/viaf/> .

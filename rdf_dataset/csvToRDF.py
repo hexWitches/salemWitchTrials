@@ -5,7 +5,7 @@ from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDFS
 
 # Namespaces 
-BASE = Namespace("https://w3id.org/salemWitchTrials/")
+BASE = Namespace("https://w3id.org/salemWitchTrials/graph")
 
 namespaces = {
     "crm": Namespace("http://www.cidoc-crm.org/cidoc-crm/"),

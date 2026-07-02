@@ -1,4 +1,4 @@
-@base <https://w3id.org/salemWitchTrials/> .
+@base <https://w3id.org/salemWitchTrials/graph> .
 @prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix fabio: <http://purl.org/spar/fabio> .
 @prefix schema: <https://schema.org/> .
